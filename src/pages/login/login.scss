@@ -2,7 +2,19 @@ page-login {
   .transparent-header{
     background-image: linear-gradient(to bottom, #051937, #143864, #1e5b95, #1e80c9, #00a9ff);
   }
+    .footer{
+    
+          position: absolute;
+          bottom: 5%;
+          width: 90%;
+
+          margin-left: 0 auto;  
+          text-align: center;   
+    }
     ion-content {
+      .main{
+        margin-top: 15%;
+      }
       
         background-size: cover;
         background-position: center;

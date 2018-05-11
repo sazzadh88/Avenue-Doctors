@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="linkedin">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,12 +8,40 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-  <button ion-button primary (click)="goLogin()">Login</button>
+  
+  <ion-list no-lines>
+      <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" value="Sazzad" >Sazzad</ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email" value="sazzadh88@gmail.com" >sazzadh88@gmail.com</ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Mobile</ion-label>
+          <ion-input type="text" value="9439447586" >9439447586</ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Select Date</ion-label>
+          <ion-input type="text" value="{{ date }}" (clicl)="showDatePicker()">{{ date }}</ion-input>
+      </ion-item>
+  
+          <ion-grid>
+              
+              <ion-row>
+                <ion-col col-4>
+                   
+                </ion-col>
+                <ion-col col-8>
+                   
+                    <ion-select [(ngModel)]="time" multiple="false" cancelText="Cancel" okText="Select">
+                      <ion-option value="bacon" selected="true">Select Time</ion-option>
+                    </ion-select>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+    
+       
+  </ion-list>
 </ion-content>
