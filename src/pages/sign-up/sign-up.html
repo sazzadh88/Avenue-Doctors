@@ -1,0 +1,53 @@
+<ion-content padding class="transparent-header">
+
+  <div padding class="main">
+    <ion-row>
+      <ion-col>
+        <img class="logo" src="assets/imgs/806601_doctor_512x512.png" style="height: 18% !important" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- <ion-card> -->
+
+
+        <ion-list inset class="no-border">
+          <ion-item>
+            <ion-input type="text" placeholder="Fullname" [(ngModel)]='loginData.fullname'></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Email" [(ngModel)]='loginData.email'></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Phone" [(ngModel)]='loginData.phone'></ion-input>
+          </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Address" [(ngModel)]='loginData.address'></ion-input>
+            </ion-item>
+              <ion-item>
+                <ion-input type="text" placeholder="ZIP Code" [(ngModel)]='loginData.pin'></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input type="password" placeholder="Password" [(ngModel)]='loginData.password'></ion-input>
+              </ion-item>
+        </ion-list>
+        <!-- </ion-card> -->
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="login-button" [disabled]='!loginData.email || !loginData.password' (click)="signup()">Register</button>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>
+        <div class="signup" (click)="goToLogin()">
+          <span>Already have an account?</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <!-- <span class="footer" style="line-height: 10% !important">© Avenue Doctors</span> -->
+
+
+</ion-content>

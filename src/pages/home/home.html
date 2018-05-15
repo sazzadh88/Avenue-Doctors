@@ -8,40 +8,43 @@
 </ion-header>
 
 <ion-content padding>
+
+  <ion-list>
+    <ion-card>
+
+
+
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input  type="text" value="{{ userData.fullname }}">{{ userData.fullname }}</ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input  type="email" value="{{ userData.email }}">{{ userData.email }}</ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Mobile</ion-label>
+        <ion-input  type="text" value="{{ userData.mobile }}">{{ userData.mobile }}</ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label floating>Select Date</ion-label>
+        <ion-datetime  (ionChange)="changeDate()" displayFormat="YYYY-MM-DD" min="{{ date }}" max="2020" [(ngModel)]="userData.datex" pickerFormat="YYYY-MM-DD"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Select Time</ion-label>
+          <ion-select [(ngModel)]="userData.timeslotSelected"  multiple="false" cancelText="Cancel" okText="Select">
+            
+              <ion-option value="{{ time.id }}" *ngFor="let time of userData.timeSlots">{{ time.time}}</ion-option>
+            </ion-select>
+      </ion-item>
+      <ion-item>
   
-  <ion-list no-lines>
-      <ion-item>
-          <ion-label floating>Name</ion-label>
-          <ion-input type="text" value="Sazzad" >Sazzad</ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label floating>Email</ion-label>
-          <ion-input type="email" value="sazzadh88@gmail.com" >sazzadh88@gmail.com</ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label floating>Mobile</ion-label>
-          <ion-input type="text" value="9439447586" >9439447586</ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label floating>Select Date</ion-label>
-          <ion-input type="text" value="{{ date }}" (clicl)="showDatePicker()">{{ date }}</ion-input>
-      </ion-item>
   
-          <ion-grid>
-              
-              <ion-row>
-                <ion-col col-4>
-                   
-                </ion-col>
-                <ion-col col-8>
-                   
-                    <ion-select [(ngModel)]="time" multiple="false" cancelText="Cancel" okText="Select">
-                      <ion-option value="bacon" selected="true">Select Time</ion-option>
-                    </ion-select>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-    
-       
+    <button class="button" ion-button (click)="bookSlot()" [disabled]='!userData.email || !userData.timeslotSelected || !userData.fullname'>Save</button>
+      </ion-item>
+
+    </ion-card>
   </ion-list>
 </ion-content>

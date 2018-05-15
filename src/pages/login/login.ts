@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { ApiServiceProvider } from '../../providers/api-service/api-service';
 import { HomePage } from '../home/home';
+import { SignUpPage } from '../sign-up/sign-up';
 /**
  * Generated class for the LoginPage page.
  *
@@ -36,6 +37,7 @@ export class LoginPage {
       if(this.data.code == 401){
         this.showToast('Invalid Login');
       }else if(this.data.code == 200){
+        localStorage.setItem('user_data',JSON.stringify(this.data.data));
         this.navCtrl.setRoot(HomePage);
         this.showToast('Login Successful');
       }
@@ -48,7 +50,7 @@ export class LoginPage {
   }
 
   goToSignup(){
-    alert('Signup Clicked');
+   this.navCtrl.setRoot(SignUpPage);
   }
 
   loader() {

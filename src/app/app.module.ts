@@ -12,13 +12,18 @@ import { LoginPage } from '../pages/login/login';
 import { ApiServiceProvider } from '../providers/api-service/api-service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { MyBookingsPage } from '../pages/my-bookings/my-bookings';
+import { LogoutPage } from '../pages/logout/logout';
+// import { SignUpPage } from '../pages/sign-up/sign-up';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    MyBookingsPage,
+    LogoutPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,9 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    MyBookingsPage,
+    LogoutPage
   ],
   providers: [
     StatusBar,

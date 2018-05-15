@@ -1,18 +1,21 @@
-<!--
-  Generated template for the MyBookingsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>MyBookings</ion-title>
-  </ion-navbar>
-
-</ion-header>
+    <ion-navbar color="linkedin">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>My Appointments</ion-title>
+    </ion-navbar>
+  </ion-header>
 
 
 <ion-content padding>
-
+    <ion-card *ngFor="let a of appointments" class="card">
+        <ion-card-content>
+          <p><strong>Appointment ID : </strong> AVD/{{ a.appointment_id }}</p>
+          <p><strong>Date : </strong> {{ a.date }}</p>
+          <p><strong>Time : </strong> {{ a.time }}</p>
+          <p><strong>Status : </strong> {{ a.status }}</p>
+        </ion-card-content>
+      
+      </ion-card>
 </ion-content>

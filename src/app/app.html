@@ -3,17 +3,17 @@
     <div class="menu-header">
       <!--material-design-background-->
       <img class="user-avatar round" src="assets/imgs/806962_user_512x512.png">
-      <p class="name">Sazzad Hussain</p>
-      <p class="e-mail">sazzadh88@email.com</p>
+      <p class="name">{{ userData.fullname }}</p>
+      <p class="e-mail">{{ userData.email }}</p>
     </div>
     <ion-list no-lines>
-      <button menuClose="left" ion-item detail-none>
+      <button menuClose="left" ion-item detail-none (click)="myHome()">
         <ion-icon ios="ios-home" md="md-home"></ion-icon>
         Home
       </button>
-      <button menuClose="left" ion-item detail-none>
+      <button menuClose="left" ion-item detail-none (click)="myAppointments()">
         <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
-         Bookings
+         My Appointments
       </button>
 
       <button menuClose="left" ion-item detail-none>
@@ -21,7 +21,7 @@
          Notifications
       </button>
 
-      <button menuClose="left" ion-item detail-none>
+      <button menuClose="left" ion-item detail-none (click)="logout()">
         <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
          Logout
       </button>
